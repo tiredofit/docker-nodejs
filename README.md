@@ -1,10 +1,10 @@
-# hub.docker.com/tiredofit/nodejs
+# tiredofit/nodejs
 
 # Introduction
 
 Dockerfile to build a [NodeJS Server](https://nodejs.org) 
 
-This Container uses SD [Alpine Edge] as a base.
+This Container uses [Alpine 3.6] as a base.
 
 
 
@@ -42,12 +42,20 @@ None.
 
 # Installation
 
-Automated builds of the image are available on [Registry](https://hub.docker.com/tiredofit/nodejs) and is the recommended method of installation.
+Automated builds of the image are available on [Docker Hub](https://tiredofit/nodejs) and is the recommended method of installation.
 
 
 ```bash
-docker pull hub.docker.com/tiredofit/nodejs
+docker pull tiredofit/nodejs:(image tag)
 ```
+
+
+The following image tags are available:
+
+* `4:latest` - Node JS 4 - Alpine 3.6
+* `6:latest` - Node JS 6 - Alpine edge
+* `latest` - Node JS 6 - Alpine edge
+
 
 # Quick Start
 
