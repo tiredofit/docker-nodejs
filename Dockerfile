@@ -33,8 +33,8 @@ RUN addgroup -g 1050 node && \
     C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
     56730D5401028683275BD23C23EFEFE93C4CFFFE \
   ; do \
-    gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
-  done && \
+    gpg --keyserver pgp.mit.edu --recv-keys "$key" ;  \
+   done && \
     curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.xz" && \
     curl -SLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" && \
     gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc && \
