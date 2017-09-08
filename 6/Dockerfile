@@ -1,5 +1,5 @@
 FROM tiredofit/alpine:edge
-MAINTAINER Dave Conroy <daveconroy@selfdesign.org>
+LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Environment Variables
 ARG NODE_VERSION=6.11.0
