@@ -1,4 +1,4 @@
-## 2.0 2017-07-04 <daveconroy@selfdesign.org>
+## 2.0 2017-09-09 <daveconroy@selfdesign.org>
 
 * Rebase with Cron, Logwatch and S6
 * NodeJS 4.84

@@ -54,6 +54,7 @@ The following image tags are available:
 
 * `4:latest` - Node JS 4 - Alpine 3.6
 * `6:latest` - Node JS 6 - Alpine edge
+* `8:latest` - Node JS 8 - Alpine 3.6
 * `latest` - Node JS 6 - Alpine edge
 
 

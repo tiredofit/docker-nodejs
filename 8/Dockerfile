@@ -1,10 +1,8 @@
 FROM tiredofit/alpine:3.6
-LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
-
-  ENV VERSION=v4.8.4 \
-      NPM_VERSION=2 \
-      YARN_VERSION=latest
+  ENV VERSION=v8.4.0 \
+        NPM_VERSION=5 \
+        YARN_VERSION=latest
 
   RUN apk add --no-cache \
               binutils-gold \
