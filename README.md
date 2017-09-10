@@ -2,7 +2,7 @@
 
 # Introduction
 
-Dockerfile to build a [NodeJS Server](https://nodejs.org) 
+Dockerfile to build a [NodeJS](https://nodejs.org) base image for building applications.
 
 This Container uses [Alpine 3.6] as a base.
 
@@ -66,23 +66,20 @@ The following image tags are available:
 * Map [persistent storage](#data-volumes) for access to configuration and data files for backup.
 * Map [Network Ports](#networking) to allow external access.
 
-Start openldap using:
+Start the container using:
 
 ```bash
 docker-compose up
 ```
-__NOTE__: Please allow up to 1 minutes for the application to start.
-
 
 ## Data-Volumes
-
 
 This a base image, so no data volumes are exposed.
 
 
 ## Environment Variables
 
-No Environment Variables are exposed.
+No Environment Variables are exposed other than the [base environment variables](https://hub.docker.com/r/alpine)..
 
 ## Networking
 
