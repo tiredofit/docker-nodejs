@@ -1,8 +1,8 @@
 FROM tiredofit/alpine:3.6
 
   ENV VERSION=v8.4.0 \
-        NPM_VERSION=5 \
-        YARN_VERSION=latest
+      NPM_VERSION=5 \
+      YARN_VERSION=latest
 
   RUN apk add --no-cache \
               binutils-gold \
@@ -24,7 +24,8 @@ FROM tiredofit/alpine:3.6
         B9AE9905FFD7803F25714661B63B535A4C206CA9 \
         56730D5401028683275BD23C23EFEFE93C4CFFFE && \
       curl -sSLO https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.xz && \
-      curl -sSL https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc | gpg --batch --decrypt | grep " node-${VERSION}.tar.xz\$" | sha256sum -c | grep . && \
+      curl -sSL https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc | gpg --batch --decrypt | \
+        grep " node-${VERSION}.tar.xz\$" | sha256sum -c | grep . && \
       tar -xf node-${VERSION}.tar.xz && \
       cd node-${VERSION} && \
       ./configure --prefix=/usr ${CONFIG_FLAGS} && \
@@ -35,7 +36,8 @@ FROM tiredofit/alpine:3.6
         npm install -g npm@${NPM_VERSION} && \
         find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf && \
         if [ -n "$YARN_VERSION" ]; then \
-          gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 6A010C5166006599AA17F08146C2130DFD2497F5 && \
+          gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
+            6A010C5166006599AA17F08146C2130DFD2497F5 && \
           curl -sSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
           gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
           mkdir /usr/local/share/yarn && \
@@ -44,8 +46,8 @@ FROM tiredofit/alpine:3.6
           ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
           rm ${YARN_VERSION}.tar.gz*; \
         fi; \
-      fi && \
-      
+    fi && \
+          
       ## Cleanup
       apk del \
               make \
