@@ -1,3 +1,7 @@
+## 2.1 2017-09-27 <dave at tiredofit dot ca>
+
+* Fix Build Issues 
+
 ## 2.0 2017-09-09 <daveconroy@selfdesign.org>
 
 * Rebase with Cron, Logwatch and S6

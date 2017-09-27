@@ -1,3 +1,8 @@
+## 2.1 2017-09-27 <dave at tiredofit dot ca>
+
+* Fix Build Issues 
+* Node 8.6.0
+
 ## 2.0 2017-09-09 <dave at tiredofit dot ca>
 
 * Rebase with Cron, Logwatch and S6
