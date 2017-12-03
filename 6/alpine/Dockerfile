@@ -1,11 +1,12 @@
 FROM tiredofit/alpine:3.6
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
-  ENV VERSION=v6.11.4 \
+  ENV VERSION=v6.12.0 \
       NPM_VERSION=3 \
       YARN_VERSION=latest
 
-  RUN apk add --no-cache \
+  RUN adduser -h /app -g "Node User" -D nodejs && \
+      apk add --no-cache \
               binutils-gold \
               curl \
               gcc \

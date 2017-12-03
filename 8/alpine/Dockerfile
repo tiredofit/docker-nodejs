@@ -1,10 +1,11 @@
 FROM tiredofit/alpine:3.6
 
-  ENV VERSION=v8.7.0 \
+  ENV VERSION=v8.9.1 \
       NPM_VERSION=5 \
       YARN_VERSION=latest
 
-  RUN apk add --no-cache \
+  RUN adduser -h /app -g "Node User" -D nodejs && \
+      apk add --no-cache \
               binutils-gold \
               curl \
               gcc \
