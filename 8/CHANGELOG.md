@@ -1,3 +1,7 @@
+## 2.2 2017-10-22 <dave at tiredofit dot ca>
+
+* Version Bump to 8.7.0
+
 ## 2.1 2017-09-27 <dave at tiredofit dot ca>
 
 * Fix Build Issues 
