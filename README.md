@@ -4,7 +4,7 @@
 
 Dockerfile to build a [NodeJS](https://nodejs.org) base image for building applications.
 
-This Container uses [Alpine 3.6] as a base.
+This Container uses [Alpine 3.6] and [Debian:stretch] as a base.
 
 
 
@@ -53,9 +53,15 @@ docker pull tiredofit/nodejs:(image tag)
 The following image tags are available:
 
 * `4:latest` - Node JS 4 - Alpine 3.6
+* `4:debian-latest` - Node JS 4 - Debian Stretch
 * `6:latest` - Node JS 6 - Alpine edge
+* `6:debian-latest` - Node JS 6 - Debian Stretch
 * `8:latest` - Node JS 8 - Alpine 3.6
-* `latest` - Node JS 6 - Alpine edge
+* `8:debian-latest` - Node JS 8 - Debian Stretch
+* `8:latest` - Node JS 8 - Alpine 3.6
+* `9:debian-latest` - Node JS 9 - Debian Stretch
+* `9:latest` - Node JS 9 - Alpine 3.6
+* `latest` - Node JS 9 - Alpine edge
 
 
 # Quick Start
