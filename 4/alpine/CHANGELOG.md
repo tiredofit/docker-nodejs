@@ -1,3 +1,7 @@
+## 2.3 2017-01-09 <dave at tiredofit dot ca>
+
+* Bump to 4.8.7
+
 ## 2.2 2017-10-27 <dave at tiredofit dot ca>
 
 * Bump to 4.8.5

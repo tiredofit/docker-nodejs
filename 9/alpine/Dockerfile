@@ -1,6 +1,6 @@
 FROM tiredofit/alpine:3.6
 
-  ENV VERSION=v9.2.0 \
+  ENV VERSION=v9.3.0 \
       YARN_VERSION=latest
 
   RUN adduser -h /app -g "Node User" -D nodejs && \

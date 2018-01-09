@@ -1,3 +1,7 @@
+## 2.3 2017-01-09 <dave at tiredofit dot ca>
+
+* Version bump to 6.12.3
+
 ## 2.2 2017-10-22 <dave at tiredofit dot ca>
 
 * Version Bump
