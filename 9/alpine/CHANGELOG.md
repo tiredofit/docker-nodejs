@@ -2,7 +2,6 @@
 
 * Bump to 9.4.0
 
-
 ## 2.4 2017-01-09 <dave at tiredofit dot ca>
 
 * Bump to 9.3

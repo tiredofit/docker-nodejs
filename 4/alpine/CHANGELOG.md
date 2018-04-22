@@ -10,13 +10,13 @@
 
 * Fix Build Issues 
 
-## 2.0 2017-09-09 <dave at tiredofit dot ca>
+## 2.0 2017-09-09 <daveconroy@selfdesign.org>
 
 * Rebase with Cron, Logwatch and S6
 * NodeJS 4.84
 * Alpine 3.4
 
-## 1.0 2017-03-20 <dave at tiredofit dot ca>
+## 1.0 2017-03-20 <daveconroy@selfdesign.org>
 
 * NodeJS 6.3.0
 * Alpine Edge
