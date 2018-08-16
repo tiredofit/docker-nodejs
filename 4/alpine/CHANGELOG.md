@@ -1,4 +1,8 @@
-## 2.3 2017-01-09 <dave at tiredofit dot ca>
+## 2.4 2018-08-16 <dave at tiredofit dot ca>
+
+* Bump to 4.8.9
+ 
+## 2.3 2018-01-09 <dave at tiredofit dot ca>
 
 * Bump to 4.8.7
 

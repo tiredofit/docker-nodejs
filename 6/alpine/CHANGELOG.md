@@ -1,3 +1,7 @@
+## 2.4 2018-08-16 <dave at tiredofit dot ca>
+
+* Bump to 6.14.4
+
 ## 2.3 2017-01-09 <dave at tiredofit dot ca>
 
 * Version bump to 6.12.3

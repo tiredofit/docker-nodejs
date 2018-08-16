@@ -1,8 +1,7 @@
 FROM tiredofit/alpine:3.8
-LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
-  ENV VERSION=v4.9.1 \
-      NPM_VERSION=2 \
+  ENV VERSION=v10.9.0 \
+      NPM_VERSION=6 \
       YARN_VERSION=latest
 
   RUN set -x && \
@@ -35,8 +34,8 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
           ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
           ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
           rm ${YARN_VERSION}.tar.gz* ; \
-        fi ;\
-      fi && \
+        fi ; \
+    fi && \
       \
       ## Cleanup
       apk del \

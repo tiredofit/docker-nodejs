@@ -1,10 +1,15 @@
 # tiredofit/nodejs
 
+[![Build Status](https://img.shields.io/docker/build/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
+[![Docker Stars](https://img.shields.io/docker/stars/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
+[![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/nodejs.svg)](https://microbadger.com/images/tiredofit/nodejs)
+
 # Introduction
 
-Dockerfile to build a [NodeJS](https://nodejs.org) base image for building applications.
+Dockerfile to build a [NodeJS](https://nodejs.org) base image for building/serving applications.
 
-This Container uses [Alpine 3.6] and [Debian:stretch] as a base.
+This Container uses [Alpine 3.8](https://hub.docker.com/r/tiredofit/alpine) and [Debian:stretch](https://hub.docker.com/r/tiredofit/debian) as a base.
 
 
 
@@ -54,14 +59,13 @@ The following image tags are available:
 
 * `4:latest` - Node JS 4 - Alpine 3.6
 * `4:debian-latest` - Node JS 4 - Debian Stretch
-* `6:latest` - Node JS 6 - Alpine edge
+* `6:latest` - Node JS 6 - Alpine 3.8
 * `6:debian-latest` - Node JS 6 - Debian Stretch
-* `8:latest` - Node JS 8 - Alpine 3.6
+* `8:latest` - Node JS 8 - Alpine 3.8
 * `8:debian-latest` - Node JS 8 - Debian Stretch
-* `8:latest` - Node JS 8 - Alpine 3.6
-* `9:debian-latest` - Node JS 9 - Debian Stretch
-* `9:latest` - Node JS 9 - Alpine 3.6
-* `latest` - Node JS 9 - Alpine edge
+* `8:latest` - Node JS 8 - Alpine 3.8
+* `10:debian-latest` - Node JS 10 - Debian Stretch
+* `10:latest` - Node JS 10 - Alpine 3.8
 
 
 # Quick Start

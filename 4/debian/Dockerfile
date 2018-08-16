@@ -17,7 +17,7 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
                nodejs \
                yarn \
                && \
-
+       \
        apt-get clean && \
        apt-get autoremove -y && \
        rm -rf /var/lib/apt/lists/*
