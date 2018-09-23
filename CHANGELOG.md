@@ -1,4 +1,20 @@
-## 2.0 2017-07-04 <daveconroy@selfdesign.org>
+## 2.4 2018-08-16 <dave at tiredofit dot ca>
+
+* Bump to 4.8.9
+ 
+## 2.3 2018-01-09 <dave at tiredofit dot ca>
+
+* Bump to 4.8.7
+
+## 2.2 2017-10-27 <dave at tiredofit dot ca>
+
+* Bump to 4.8.5
+
+## 2.1 2017-09-27 <dave at tiredofit dot ca>
+
+* Fix Build Issues 
+
+## 2.0 2017-09-09 <daveconroy@selfdesign.org>
 
 * Rebase with Cron, Logwatch and S6
 * NodeJS 4.84
