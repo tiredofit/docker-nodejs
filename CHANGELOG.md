@@ -1,14 +1,5 @@
-## 2.0 2017-07-04 <daveconroy@selfdesign.org>
+## 1.0 2017-12-01 <dave at tiredofit dot ca>
 
-* Rebase with Cron, Logwatch and S6
-* NodeJS 4.84
-* Alpine 3.4
-
-## 1.0 2017-03-20 <daveconroy@selfdesign.org>
-
-* NodeJS 6.3.0
-* Alpine Edge
-* Zabbix
-
-
-
+* Node 6.12
+* Yarn
+* Debian Stretch
