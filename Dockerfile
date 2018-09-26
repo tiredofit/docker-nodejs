@@ -1,6 +1,6 @@
 FROM tiredofit/alpine:3.8
 
-  ENV VERSION=v10.9.0 \
+  ENV VERSION=v10.11.0 \
       NPM_VERSION=6 \
       YARN_VERSION=latest
 
