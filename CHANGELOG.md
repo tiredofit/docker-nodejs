@@ -1,3 +1,7 @@
+## 2.4.1 2018-09-26 <dave at tiredofit dot ca>
+
+* Bump to 8.12.0
+
 ## 2.4 2018-08-16 <dave at tiredofit dot ca>
 
 * Bump to 8.11.4
