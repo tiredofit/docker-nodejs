@@ -1,6 +1,14 @@
-## 2.7.1 2018-9-26 <dave at tiredofit dot ca>
+## 2.8.1 2018-12-27 <dave at tiredofit dot ca>
 
-* Bump to 10.11.0
+* Bump to 11.6.0
+
+## 2.8 2018-12-10 <dave at tiredofit dot ca>
+
+* NodeJS 11.4.0
+	
+## 2.7.1 2018-12-10 <dave at tiredofit dot ca>
+
+* Bump to 10.14.0
 
 ## 2.7 2018-08-18 <dave at tiredofit dot ca>
 
