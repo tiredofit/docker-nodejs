@@ -1,4 +1,4 @@
-FROM registry.selfdesign.org/docker/debian/stretch:latest
+FROM tiredofit/debian:stretch
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Environment Variables
