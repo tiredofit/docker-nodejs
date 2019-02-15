@@ -1,3 +1,11 @@
+## 2.9 2019-02-15 <dave at tiredofit dot ca>
+
+* Bump to Alpine 3.9
+
+## 2.8.2 2019-01-31 <dave at tiredofit dot ca>
+
+* Bump to 11.8.0
+
 ## 2.8.1 2018-12-27 <dave at tiredofit dot ca>
 
 * Bump to 11.6.0
