@@ -65,7 +65,9 @@ The following image tags are available:
 * `8:debian-latest` - Node JS 8 - Debian Stretch
 * `8:latest` - Node JS 8 - Alpine 3.8
 * `10:debian-latest` - Node JS 10 - Debian Stretch
-* `10:latest` - Node JS 10 - Alpine 3.8
+* `10:latest` - Node JS 12 - Alpine 3.8
+* `12:debian-latest` - Node JS 10 - Debian Stretch
+* `12:latest` - Node JS 12 - Alpine 3.9
 
 
 # Quick Start

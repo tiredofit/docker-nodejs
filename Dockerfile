@@ -1,8 +1,8 @@
 FROM tiredofit/alpine:3.9
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
-  ENV VERSION=v11.8.0 \
-      NPM_VERSION=6 \
+  ENV VERSION=v12.0.0 \
+      NPM_VERSION=6.9.0 \
       YARN_VERSION=latest
 
   RUN set -x && \

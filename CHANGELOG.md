@@ -1,3 +1,7 @@
+## 2.10 2019-04-26 <dave at tiredofit dot ca>
+
+* NodeJS 12.0.0
+
 ## 2.9 2019-02-15 <dave at tiredofit dot ca>
 
 * Bump to Alpine 3.9
