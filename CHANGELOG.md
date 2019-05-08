@@ -1,3 +1,7 @@
+## 2.12 2019-05-08 <dave at tiredofit dot ca>
+
+* NodeJS 12.2.0
+
 ## 2.10 2019-04-26 <dave at tiredofit dot ca>
 
 * NodeJS 12.0.0
