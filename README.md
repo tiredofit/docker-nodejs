@@ -9,7 +9,7 @@
 
 Dockerfile to build a [NodeJS](https://nodejs.org) base image for building/serving applications.
 
-This Container uses [Alpine 3.8](https://hub.docker.com/r/tiredofit/alpine) and [Debian:stretch](https://hub.docker.com/r/tiredofit/debian) as a base.
+This Container uses [Alpine 3.10](https://hub.docker.com/r/tiredofit/alpine) and [Debian:buster](https://hub.docker.com/r/tiredofit/debian) as a base.
 
 
 
@@ -63,11 +63,15 @@ The following image tags are available:
 * `6:debian-latest` - Node JS 6 - Debian Stretch
 * `8:latest` - Node JS 8 - Alpine 3.8
 * `8:debian-latest` - Node JS 8 - Debian Stretch
-* `8:latest` - Node JS 8 - Alpine 3.8
+* `8:latest` - Node JS 8 - Alpine 3.10
 * `10:debian-latest` - Node JS 10 - Debian Stretch
-* `10:latest` - Node JS 12 - Alpine 3.8
-* `12:debian-latest` - Node JS 10 - Debian Stretch
-* `12:latest` - Node JS 12 - Alpine 3.9
+* `10:latest` - Node JS 10 - Alpine 3.10
+* `12:debian-latest` - Node JS 12 - Debian Stretch
+* `12:latest` - Node JS 12 - Alpine 3.10
+* `12:debian-latest` - Node JS 12 - Debian Stretch
+* `12:latest` - Node JS 12 - Alpine 3.10
+* `13:debian-latest` - Node JS 13 - Debian Buster
+* `13:latest` - Node JS 13 - Alpine 3.10
 
 
 # Quick Start
