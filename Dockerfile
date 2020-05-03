@@ -1,4 +1,4 @@
-FROM tiredofit/debian:stretch
+FROM tiredofit/debian:buster
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Environment Variables
@@ -10,9 +10,10 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Install NodeJS
        curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-       echo 'deb https://deb.nodesource.com/node_12.x stretch main' > /etc/apt/sources.list.d/nodesource.list && \
-       echo 'deb-src https://deb.nodesource.com/node_12.x stretch main' >> /etc/apt/sources.list.d/nodesource.list && \
+       echo 'deb https://deb.nodesource.com/node_14.x buster main' > /etc/apt/sources.list.d/nodesource.list && \
+       echo 'deb-src https://deb.nodesource.com/node_14.x buster main' >> /etc/apt/sources.list.d/nodesource.list && \
        apt-get update && \
+       apt-get upgrade
        apt-get install -y \
                nodejs \
                yarn \

@@ -1,3 +1,12 @@
+## 1.3.0 2020-05-03 <dave at tiredofit dot ca>
+
+   ### Added
+      - NodeJS 14
+
+   ### Changed
+      - Debian Buster Base
+
+
 ## 1.2 2018-04-25 <dave at tiredofit dot ca>
 
 * NodeJS 12
