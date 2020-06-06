@@ -61,13 +61,13 @@ The following image tags are available:
 * `8:latest` - Node JS 8 - Alpine 3.11
 * `8:debian-latest` - Node JS 8 - Debian Stretch
 * `10:latest` - Node JS 10 - Alpine 3.11
-* `10:debian-latest` - Node JS 10 - Debian Stretch
+* `10:debian-latest` - Node JS 10 - Debian Buster
 * `11:latest` - Node JS 11 - Alpine 3.11
-* `11:debian-latest` - Node JS 11 - Debian Stretch
+* `11:debian-latest` - Node JS 11 - Debian Buster
 * `12:latest` - Node JS 12 - Alpine 3.11
-* `12:debian-latest` - Node JS 12 - Debian Stretch
+* `12:debian-latest` - Node JS 12 - Debian Buster
 * `13:latest` - Node JS 13 - Alpine 3.11
-* `13:debian-latest` - Node JS 13 - Debian Stretch
+* `13:debian-latest` - Node JS 13 - Debian Buster
 * `14:latest` - Node JS 14 - Alpine 3.11
 * `14:debian-latest` - Node JS 14 - Debian Buster
 
