@@ -8,10 +8,7 @@
 # Introduction
 
 Dockerfile to build a [NodeJS](https://nodejs.org) base image for building/serving applications.
-
-This Container uses [Alpine 3.8](https://hub.docker.com/r/tiredofit/alpine) and [Debian:stretch](https://hub.docker.com/r/tiredofit/debian) as a base.
-
-
+This container uses [Alpine](https://hub.docker.com/r/tiredofit/alpine) and [Debian](https://hub.docker.com/r/tiredofit/debian) as a base.
 
 [Changelog](CHANGELOG.md)
 
@@ -70,7 +67,8 @@ The following image tags are available:
 
 # Quick Start
 
-* The quickest way to get started is using [docker-compose](https://docs.docker.com/compose/). See the examples folder for a working [docker-compose.yml](examples/docker-compose.yml) that can be modified for development or production use.
+* The quickest way to get started is using [docker-compose](https://docs.docker.com/compose/). 
+See examples folder for a working [docker-compose.yml](examples/docker-compose.yml) that can be modified for development or production use.
 
 * Set various [environment variables](#environment-variables) to understand the capabilities of this image.
 * Map [persistent storage](#data-volumes) for access to configuration and data files for backup.
@@ -89,11 +87,11 @@ This a base image, so no data volumes are exposed.
 
 ## Environment Variables
 
-No Environment Variables are exposed other than the [base environment variables](https://hub.docker.com/r/alpine)..
+No environment variables are exposed other than the [base environment variables](https://hub.docker.com/r/alpine).
 
 ## Networking
 
-No Networking Ports are exposed.
+No networking ports are exposed.
 
 #### Shell Access
 
