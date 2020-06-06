@@ -69,7 +69,7 @@ The following image tags are available:
 * `13:latest` - Node JS 13 - Alpine 3.11
 * `13:debian-latest` - Node JS 13 - Debian Stretch
 * `14:latest` - Node JS 14 - Alpine 3.11
-* `14:debian-latest` - Node JS 14 - Debian Stretch
+* `14:debian-latest` - Node JS 14 - Debian Buster
 
 
 
