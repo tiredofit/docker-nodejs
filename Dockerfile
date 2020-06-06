@@ -47,6 +47,6 @@ RUN set -x && \
             linux-headers \
             binutils-gold \
             gnupg ${DEL_PKGS} && \
-    rm -rf ${RM_DIRS} /node-${VERSION}* /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
+    rm -rf ${RM_DIRS} /node-${NODEJS_VERSION}* /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
                     /root/.gnupg /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
                     /usr/lib/node_modules/npm/scripts
