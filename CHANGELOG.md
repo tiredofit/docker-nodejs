@@ -1,3 +1,11 @@
+## 2.12.1 2020-08-05 <dave at tiredofit dot ca>
+
+   ### Added
+      - Node 12.18.3
+      - NPM 6.14.7
+      - Alpine 3.12
+
+
 ## 2.12 2019-05-08 <dave at tiredofit dot ca>
 
 * NodeJS 12.2.0
