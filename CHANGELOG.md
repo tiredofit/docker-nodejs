@@ -1,3 +1,11 @@
+## 2.7.2 2020-08-05 <dave at tiredofit dot ca>
+
+   ### Added
+      - Node 10.22.0
+      - NPM 6.14.7
+      - Alpine 3.12
+
+
 ## 2.7.1 2018-9-26 <dave at tiredofit dot ca>
 
 * Bump to 10.11.0
