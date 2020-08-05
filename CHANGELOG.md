@@ -1,3 +1,10 @@
+## 2.18.1 2020-08-05 <dave at tiredofit dot ca>
+
+   ### Added
+      - NodeJS 14.7.0
+      - Alpine 3.12
+
+
 ## 2.18.0 2020-04-30 <dave at tiredofit dot ca>
 
    ### Added
