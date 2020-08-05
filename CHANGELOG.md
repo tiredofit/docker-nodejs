@@ -1,3 +1,10 @@
+## 2.4.2 2020-08-05 <dave at tiredofit dot ca>
+
+   ### Added
+      - NPM 6.14.7
+      - Alpine 3.12
+
+
 ## 2.4.1 2018-09-26 <dave at tiredofit dot ca>
 
 * Bump to 8.12.0
