@@ -1,3 +1,9 @@
+## 2.18.2 2020-08-05 <dave at tiredofit dot ca>
+
+   ### Added
+      - Change Python2 to Python3
+
+
 ## 2.18.1 2020-08-05 <dave at tiredofit dot ca>
 
    ### Added
