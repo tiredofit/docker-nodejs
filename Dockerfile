@@ -13,7 +13,7 @@ RUN set -x && \
             make \
             gcc \
             g++ \
-            python \
+            python3 \
             linux-headers \
             binutils-gold \
             gnupg && \
@@ -43,7 +43,7 @@ RUN set -x && \
             make \
             gcc \
             g++ \
-            python \
+            python3 \
             linux-headers \
             binutils-gold \
             gnupg ${DEL_PKGS} && \
