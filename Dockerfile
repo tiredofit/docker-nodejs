@@ -48,7 +48,7 @@ RUN set -x && \
             ${DEL_PKGS} && \
             \
     rm -rf ${RM_DIRS} \
-           /v-${NODEJS_VERSION}* \
+           /v${NODEJS_VERSION}.tar.gz \
            /usr/share/man /tmp/* \
            /var/cache/apk/* \
            /root/.npm /root/.node-gyp \
