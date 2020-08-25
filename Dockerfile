@@ -46,7 +46,14 @@ RUN set -x && \
             python3 \
             linux-headers \
             binutils-gold \
-            gnupg ${DEL_PKGS} && \
-    rm -rf ${RM_DIRS} /node-${NODEJS_VERSION}* /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
-                    /root/.gnupg /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
-                    /usr/lib/node_modules/npm/scripts
+            ${DEL_PKGS} && \
+            \
+    rm -rf ${RM_DIRS} \
+           /v${NODEJS_VERSION}.tar.gz \
+           /usr/share/man /tmp/* \
+           /var/cache/apk/* \
+           /root/.npm /root/.node-gyp \
+           /root/.gnupg /usr/lib/node_modules/npm/man \
+           /usr/lib/node_modules/npm/doc \
+           /usr/lib/node_modules/npm/html \
+           /usr/lib/node_modules/npm/scripts
