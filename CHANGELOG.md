@@ -1,3 +1,9 @@
+## 2.18.3 2020-08-25 <dave at tiredofit dot ca>
+
+   ### Added
+      - Node 14.8.0
+
+
 ## 2.18.2 2020-08-05 <dave at tiredofit dot ca>
 
    ### Added
