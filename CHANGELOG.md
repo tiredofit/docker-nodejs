@@ -1,3 +1,9 @@
+## 2.18.4 2020-09-11 <dave at tiredofit dot ca>
+
+   ### Added
+      - NodeJS 14.10.0
+
+
 ## 2.18.3 2020-08-25 <dave at tiredofit dot ca>
 
    ### Added
