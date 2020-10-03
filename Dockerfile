@@ -2,8 +2,8 @@ FROM tiredofit/alpine:3.12
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ENV NODEJS_VERSION=8.17.0 \
-    NPM_VERSION=6.17.22 \
-    YARN_VERSION=1.22.4
+    NPM_VERSION=6.14.8 \
+    YARN_VERSION=1.22.10
 
 RUN set -x && \
     adduser -h /app -g "Node User" -D nodejs && \
@@ -13,6 +13,7 @@ RUN set -x && \
             make \
             gcc \
             g++ \
+            python2 \
             python3 \
             linux-headers \
             binutils-gold \
@@ -43,6 +44,7 @@ RUN set -x && \
             make \
             gcc \
             g++ \
+            python2 \
             python3 \
             linux-headers \
             binutils-gold \
