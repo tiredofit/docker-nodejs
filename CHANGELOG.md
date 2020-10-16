@@ -1,3 +1,10 @@
+## 2.18.6 2020-10-16 <dave at tiredofit dot ca>
+
+   ### Added
+      - Node 14.14.0
+      - Yarn 1.22.10
+
+
 ## 2.18.5 2020-09-29 <dave at tiredofit dot ca>
 
    ### Added
