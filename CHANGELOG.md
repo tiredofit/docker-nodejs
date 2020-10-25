@@ -1,3 +1,10 @@
+## 2.12.4 2020-10-25 <dave at tiredofit dot ca>
+
+   ### Added
+      - Nodejs 12.19.0
+      - Added jq package
+
+
 ## 2.12.3 2020-08-25 <dave at tiredofit dot ca>
 
    ### Changed
