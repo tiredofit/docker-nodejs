@@ -1,3 +1,9 @@
+## 2.18.7 2020-10-25 <dave at tiredofit dot ca>
+
+   ### Added
+      - Add jq package
+
+
 ## 2.18.6 2020-10-16 <dave at tiredofit dot ca>
 
    ### Added

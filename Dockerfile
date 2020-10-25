@@ -8,13 +8,14 @@ ENV NODEJS_VERSION=14.14.0 \
 RUN set -x && \
     adduser -h /app -g "Node User" -D nodejs && \
     apk add --no-cache \
-            libstdc++ \
-            make \
+            binutils-gold \
             gcc \
             g++ \
-            python3 \
+            jq \
+            libstdc++ \
             linux-headers \
-            binutils-gold \
+            make \
+            python3 \
             && \
     \
     curl -sSLO https://github.com/nodejs/node/archive/v${NODEJS_VERSION}.tar.gz && \
