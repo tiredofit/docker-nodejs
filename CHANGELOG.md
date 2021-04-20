@@ -1,3 +1,9 @@
+## 1.4.0 2021-04-20 <dave at tiredofit dot ca>
+
+   ### Added
+      - NodeJS 16.x
+
+
 ## 1.3.0 2020-05-03 <dave at tiredofit dot ca>
 
    ### Added
