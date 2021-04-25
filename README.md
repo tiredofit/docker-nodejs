@@ -1,6 +1,5 @@
 # hub.docker.com/r/tiredofit/nodejs
 
-[![Build Status](https://img.shields.io/docker/build/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
 [![Docker Stars](https://img.shields.io/docker/stars/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
 [![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/nodejs.svg)](https://microbadger.com/images/tiredofit/nodejs)
@@ -19,17 +18,14 @@ This container uses [Alpine](https://hub.docker.com/r/tiredofit/alpine) and [Deb
 ## Table of Contents
 
 - [Introduction](#introduction)
-	- [Changelog](CHANGELOG.md)
+- [Authors](#authors)
+- [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [Dependencies](#dependendcies)
 - [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-	- [Data Volumes](#data-volumes)
-	- [Database](#database)
-	- [Environment Variables](#environmentvariables)
+	- [Quick Start](#quick-start)
+	- [Data-Volumes](#data-volumes)
+	- [Environment Variables](#environment-variables)
 	- [Networking](#networking)
-- [Maintenance](#maintenance)
 	- [Shell Access](#shell-access)
 - [References](#references)
 
@@ -54,19 +50,14 @@ docker pull tiredofit/nodejs:(image tag)
 
 The following image tags are available:
 
-* `4:latest` - Node JS 4 - Alpine 3.6
-* `4:debian-latest` - Node JS 4 - Debian Stretch
-* `6:latest` - Node JS 6 - Alpine 3.6
-* `6:debian-latest` - Node JS 6 - Debian Stretch
-* `8:latest` - Node JS 8 - Alpine 3.12
-* `8:debian-latest` - Node JS 8 - Debian Stretch
-* `10:latest` - Node JS 10 - Alpine 3.12
+* `10:latest` - Node JS 10 - Alpine 3.13
 * `10:debian-latest` - Node JS 10 - Debian Buster
-* `12:latest` - Node JS 12 - Alpine 3.12
+* `12:latest` - Node JS 12 - Alpine 3.13
 * `12:debian-latest` - Node JS 12 - Debian Buster
-* `14:latest` - Node JS 14 - Alpine 3.12
+* `14:latest` - Node JS 14 - Alpine 3.13
+* `16:latest` - Node JS 16 - Alpine 3.13
 * `14:debian-latest` - Node JS 14 - Debian bBuster
-
+* `16:debian-latest` - Node JS 16 - Debian bBuster
 
 
 ### Quick Start

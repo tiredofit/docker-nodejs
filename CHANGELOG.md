@@ -1,3 +1,8 @@
+## 2.0.0 2021-04-25 <dave at tiredofit dot ca>
+
+   ### Changed
+      - Omni Dockerfile to support various releases, and variants of Debian
+
 ## 1.4.0 2021-04-20 <dave at tiredofit dot ca>
 
    ### Added
