@@ -74,35 +74,35 @@ jobs:
       - name: Label
         id: Label
         run: |
-          if [ -f "Dockerfile" ] ; then
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
+          if [ -f "Dockerfile.debian" ] ; then
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/heads/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile.debian
             fi
           fi
 
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile
+          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile.debian
 
       - name: Build
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.debian
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
@@ -172,35 +172,35 @@ jobs:
       - name: Label
         id: Label
         run: |
-          if [ -f "Dockerfile" ] ; then
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
+          if [ -f "Dockerfile.debian" ] ; then
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/heads/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile.debian
             fi
           fi
 
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile
+          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile.debian
 
       - name: Build
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.debian
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
@@ -270,35 +270,35 @@ jobs:
       - name: Label
         id: Label
         run: |
-          if [ -f "Dockerfile" ] ; then
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
+          if [ -f "Dockerfile.debian" ] ; then
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/heads/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile.debian
             fi
           fi
 
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile
+          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile.debian
 
       - name: Build
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.debian
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
@@ -368,35 +368,35 @@ jobs:
       - name: Label
         id: Label
         run: |
-          if [ -f "Dockerfile" ] ; then
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile
-            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile
+          if [ -f "Dockerfile.debian" ] ; then
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_repository=\"https://github.com/${GITHUB_REPOSITORY}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_commit=\"${GITHUB_SHA}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_committed_by=\"${GITHUB_ACTOR}\"" Dockerfile.debian
+            sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_tag=\"${GITHUB_REF#refs/tags/v}\"" Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/heads/* ]]; then
-              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile
+              sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_branch=\"${GITHUB_REF#refs/heads/}\"" Dockerfile.debian
             fi
           fi
 
       - name: Switch
         id: Switch
         run: |
-          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile
+          sed -i "s|FROM tiredofit/debian.*|FROM tiredofit/debian:${DISTRIB}|g" Dockerfile.debian
 
       - name: Build
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.debian
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
