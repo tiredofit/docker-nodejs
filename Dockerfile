@@ -1,55 +1,42 @@
 FROM tiredofit/alpine:3.13
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
-ENV NODEJS_VERSION=16.0.0 \
-    NPM_VERSION=latest \
-    YARN_VERSION=1.22.10
+ARG NODE_VERSION
+
+ENV NODE_VERSION=${NODE_VERSION:-"16.0.0"}
 
 RUN set -x && \
     adduser -h /app -g "Node User" -D nodejs && \
-    apk add --no-cache \
-            binutils-gold \
-            gcc \
-            g++ \
-            jq \
-            libstdc++ \
-            linux-headers \
-            make \
-            python3 \
-            && \
+    apk add -t .node-build-deps \
+                binutils-gold \
+                g++ \
+                gcc \
+                linux-headers \
+                make \
+                python3 \
+                && \
     \
-    curl -sSLO https://github.com/nodejs/node/archive/v${NODEJS_VERSION}.tar.gz && \
-    tar -xf v${NODEJS_VERSION}.tar.gz && \
-    cd node-${NODEJS_VERSION} && \
-    ./configure --prefix=/usr ${CONFIG_FLAGS} && \
+    apk add -t .node-run-deps \
+                jq \
+                libstdc++ \
+                && \
+    \
+    mkdir -p /usr/src/node && \
+    curl -sSL https://github.com/nodejs/node/archive/v${NODE_VERSION}.tar.gz | tar xfz - --strip 1 -C /usr/src/node && \
+    cd /usr/src/node && \
+    ./configure \
+                --prefix=/usr \
+                ${CONFIG_FLAGS} \
+                && \
     make -j$(getconf _NPROCESSORS_ONLN) && \
     make install && \
     cd / && \
-    if [ -z "$CONFIG_FLAGS" ]; then \
-        npm install -g npm@${NPM_VERSION} && \
-        find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf && \
-        if [ -n "$YARN_VERSION" ]; then \
-            curl -sSL -O https://github.com/yarnpkg/yarn/releases/download/v${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz && \
-            mkdir /usr/local/share/yarn && \
-            tar -xf yarn-v${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
-            ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
-            ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
-            rm yarn-v${YARN_VERSION}.tar.gz* ; \
-        fi ;\
-    fi && \
+    npm install -g yarn && \
     \
     ## Cleanup
-    apk del \
-            make \
-            gcc \
-            g++ \
-            python3 \
-            linux-headers \
-            binutils-gold \
-            ${DEL_PKGS} && \
+    apk del .node-build-deps && \
             \
-    rm -rf ${RM_DIRS} \
-           /v${NODEJS_VERSION}.tar.gz \
+    rm -rf /usr/src/* \
            /usr/share/man /tmp/* \
            /var/cache/apk/* \
            /root/.npm /root/.node-gyp \

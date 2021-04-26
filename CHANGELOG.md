@@ -1,3 +1,8 @@
+## 3.0.0 2021-04-25 <dave at tiredofit dot ca>
+
+   ### Added
+      - Added Build Arguments to control Node version
+
 ## 2.19.0 2021-04-20 <dave at tiredofit dot ca>
 
    ### Added
