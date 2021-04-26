@@ -13,6 +13,7 @@ RUN set -x && \
                 gcc \
                 linux-headers \
                 make \
+                python2 \
                 python3 \
                 && \
     \
@@ -21,7 +22,6 @@ RUN set -x && \
                 libstdc++ \
                 && \
     \
-    ln -s /usr/bin/python3 /usr/sbin/python && \
     mkdir -p /usr/src/node && \
     curl -sSL https://github.com/nodejs/node/archive/${NODE_VERSION}.tar.gz | tar xfz - --strip 1 -C /usr/src/node && \
     cd /usr/src/node && \
