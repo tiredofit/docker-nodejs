@@ -9,6 +9,7 @@ on:
     paths:
     - '**'
     - '!README.md'
+jobs:
   v16_alpine:
     env:
       RELEASE: "16"
