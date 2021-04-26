@@ -1,0 +1,48 @@
+FROM tiredofit/alpine:3.13
+LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
+
+ARG NODE_VERSION
+
+ENV NODE_VERSION=${NODE_VERSION:-"v16.0.0"}
+
+RUN set -x && \
+    adduser -h /app -g "Node User" -D nodejs && \
+    apk add -t .node-build-deps \
+                binutils-gold \
+                g++ \
+                gcc \
+                linux-headers \
+                make \
+                python3 \
+                && \
+    \
+    apk add -t .node-run-deps \
+                jq \
+                libstdc++ \
+                && \
+    \
+    ln -s /usr/bin/python3 /usr/sbin/python && \
+    mkdir -p /usr/src/node && \
+    curl -sSL https://github.com/nodejs/node/archive/${NODE_VERSION}.tar.gz | tar xfz - --strip 1 -C /usr/src/node && \
+    cd /usr/src/node && \
+    ./configure \
+                --prefix=/usr \
+                ${CONFIG_FLAGS} \
+                && \
+    make -j$(getconf _NPROCESSORS_ONLN) && \
+    make install && \
+    cd / && \
+    npm install -g yarn && \
+    \
+    ## Cleanup
+    apk del .node-build-deps && \
+            \
+    rm -rf /usr/sbin/python \
+           /usr/src/* \
+           /usr/share/man /tmp/* \
+           /var/cache/apk/* \
+           /root/.npm /root/.node-gyp \
+           /root/.gnupg /usr/lib/node_modules/npm/man \
+           /usr/lib/node_modules/npm/doc \
+           /usr/lib/node_modules/npm/html \
+           /usr/lib/node_modules/npm/scripts

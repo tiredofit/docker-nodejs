@@ -1,0 +1,23 @@
+FROM tiredofit/debian:buster
+LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
+
+ARG NODE_VERSION
+ENV NODE_VERSION=${NODE_VERSION:-16}
+
+### Add users
+RUN set -x && \
+    adduser --home /app --gecos "Node User" --disabled-password nodejs && \
+    \
+    curl -sSLk https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
+    echo "deb https://deb.nodesource.com/node_${NODE_VERSION}.x $(cat /etc/os-release |grep "VERSION=" | awk 'NR>1{print $1}' RS='(' FS=')') main" > /etc/apt/sources.list.d/nodesource.list && \
+    echo "deb-src https://deb.nodesource.com/node_${NODE_VERSION}.x $(cat /etc/os-release |grep "VERSION=" | awk 'NR>1{print $1}' RS='(' FS=')') main" >> /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install --no-install-recommends -y \
+                         nodejs \
+                         yarn \
+                         && \
+    \
+    apt-get clean && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
