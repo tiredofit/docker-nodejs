@@ -1,5 +1,5 @@
 # Manual Workflow tiredofit/docker-nodejs
-name: Manual
+name: manual
 
 on:
   workflow_dispatch:
