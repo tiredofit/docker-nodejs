@@ -410,9 +410,8 @@ jobs:
           cd ..
           rm -rf node
           sed -i "s|ENV NODE_VERSION=.*|ENV NODE_VERSION=${NODE_VERSION}|g" Dockerfile.alpine
-
+         
           DOCKER_IMAGE=${GITHUB_REPOSITORY/docker-/}
-          set -x
           if [[ $GITHUB_REF == refs/heads/* ]]; then
              if [[ $GITHUB_REF == refs/heads/*/* ]] ; then
                BRANCH="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed "s|refs/heads/||g" | sed "s|/|-|g")"
@@ -420,9 +419,10 @@ jobs:
                BRANCH=${GITHUB_REF#refs/heads/}
              fi
 
+          
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                 ;;
             esac
           fi
@@ -519,7 +519,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -616,7 +616,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -713,7 +713,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -810,7 +810,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
