@@ -3,7 +3,7 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ARG NODE_VERSION
 
-ENV NODE_VERSION=${NODE_VERSION:-"v16.0.0"}
+ENV NODE_VERSION=${NODE_VERSION:-"v16.2.0"}
 
 RUN set -x && \
     adduser -h /app -g "Node User" -D nodejs && \

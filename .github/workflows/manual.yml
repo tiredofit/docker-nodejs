@@ -79,6 +79,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -174,6 +175,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -269,6 +271,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -364,6 +367,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.debian
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.debian
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.debian
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -410,7 +414,6 @@ jobs:
           sed -i "s|ENV NODE_VERSION=.*|ENV NODE_VERSION=${NODE_VERSION}|g" Dockerfile.alpine
 
           DOCKER_IMAGE=${GITHUB_REPOSITORY/docker-/}
-          set -x
           if [[ $GITHUB_REF == refs/heads/* ]]; then
              if [[ $GITHUB_REF == refs/heads/*/* ]] ; then
                BRANCH="${DOCKER_IMAGE}:$(echo $GITHUB_REF | sed "s|refs/heads/||g" | sed "s|/|-|g")"
@@ -418,9 +421,10 @@ jobs:
                BRANCH=${GITHUB_REF#refs/heads/}
              fi
 
+
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest,${DOCKER_IMAGE}:latest"
                 ;;
             esac
           fi
@@ -464,6 +468,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.alpine
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.alpine
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.alpine
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -486,7 +491,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile.alpine
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
   v15_alpine:
@@ -517,7 +522,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -561,6 +566,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.alpine
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.alpine
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.alpine
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -614,7 +620,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -658,6 +664,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.alpine
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.alpine
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.alpine
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -680,7 +687,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile.alpine
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
   v12_alpine:
@@ -711,7 +718,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -755,6 +762,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.alpine
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.alpine
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.alpine
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -777,7 +785,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile.alpine
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
   v10_alpine:
@@ -808,7 +816,7 @@ jobs:
 
             case ${BRANCH} in
               * )
-                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-${NODE_VERSION},${DOCKER_IMAGE}:${RELEASE}-latest"
+                  BRANCHTAG="${DOCKER_IMAGE}:${RELEASE}-alpine,${DOCKER_IMAGE}:${RELEASE}-alpine-$(echo ${NODE_VERSION} | sed 's|v||g'),${DOCKER_IMAGE}:${RELEASE}-latest"
                 ;;
             esac
           fi
@@ -852,6 +860,7 @@ jobs:
             sed -i "/FROM .*/a LABEL tiredofit.nodejs.image_build_date=\"$(date +'%Y-%m-%d %H:%M:%S')\"" Dockerfile.alpine
             if [ -f "CHANGELOG.md" ] ; then
               sed -i "/FROM .*/a LABEL tiredofit.nodejs.git_changelog_version=\"$(head -n1 ./CHANGELOG.md | awk '{print $2}')\"" Dockerfile.alpine
+              echo "COPY CHANGELOG.md /assets/.${{ secrets.DOCKER_USERNAME }}/CHANGELOG_${GITHUB_REPOSITORY}.md" >> Dockerfile.alpine
             fi
 
             if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -874,7 +883,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile.alpine
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64
           push: true
           tags: ${{ steps.prep.outputs.tags }}
 

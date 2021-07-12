@@ -1,17 +1,17 @@
-# hub.docker.com/r/tiredofit/nodejs
+# github.com/tiredofit/docker-nodejs
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
 [![Docker Stars](https://img.shields.io/docker/stars/tiredofit/nodejs.svg)](https://hub.docker.com/r/tiredofit/nodejs)
 [![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/nodejs.svg)](https://microbadger.com/images/tiredofit/nodejs)
 
-## Introduction
+## About
 
 Dockerfile to build a [NodeJS](https://nodejs.org) base image for building/serving applications.
 This container uses [Alpine](https://hub.docker.com/r/tiredofit/alpine) and [Debian](https://hub.docker.com/r/tiredofit/debian) as a base.
 
 [Changelog](CHANGELOG.md)
 
-## Authors
+## Maintainer
 
 - [Dave Conroy](https://github.com/tiredofit)
 
@@ -30,7 +30,7 @@ This container uses [Alpine](https://hub.docker.com/r/tiredofit/alpine) and [Deb
 - [References](#references)
 
 
-## Prerequisites
+## Prerequisites and Assumptions
 
 None.
 
@@ -73,7 +73,7 @@ Start the container using:
 docker-compose up
 ```
 
-### Data-Volumes
+### Persistent Storage
 
 This a base image, so no data volumes are exposed.
 
