@@ -1,3 +1,13 @@
+## 2.0.1 2022-08-12 <dave at tiredofit dot ca>
+
+   ### Added
+      - Add Node JS 18
+      - Only build Debian Bullseye
+      - Use Alpine 3.16
+
+   ### Reverted
+      - Drop Node 8, 10, 12
+
 
 ## 2.0.0 2021-04-25 <dave at tiredofit dot ca>
 

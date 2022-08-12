@@ -1,9 +1,10 @@
-FROM docker.io/tiredofit/alpine:3.13
-LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
+ARG ALPINE_VERSION=3.16
+
+FROM docker.io/alpine:${ALPINE_VERSION}
+LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ARG NODE_VERSION
-
-ENV NODE_VERSION=${NODE_VERSION:-"v16.2.0"}
+ENV NODE_VERSION=${NODE_VERSION:-"v18.7.0"}
 
 RUN set -x && \
     adduser -h /app -g "Node User" -D nodejs && \

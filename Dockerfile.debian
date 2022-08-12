@@ -1,8 +1,9 @@
-FROM docker.io/tiredofit/debian:buster
-LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
+ARG DEBIAN_VERSION=bullseye
+FROM docker.io/tiredofit/debian:${DEBIAN_VERSION}
+LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ARG NODE_VERSION
-ENV NODE_VERSION=${NODE_VERSION:-16}
+ENV NODE_VERSION=${NODE_VERSION:-18}
 
 ### Add users
 RUN set -x && \
