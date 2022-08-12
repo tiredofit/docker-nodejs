@@ -1,3 +1,9 @@
+## 2.0.2 2022-08-12 <dave at tiredofit dot ca>
+
+   ### Changed
+      - Fix alpine builds
+
+
 ## 2.0.1 2022-08-12 <dave at tiredofit dot ca>
 
    ### Added

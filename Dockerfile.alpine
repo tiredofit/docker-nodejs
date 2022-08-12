@@ -1,6 +1,6 @@
 ARG ALPINE_VERSION=3.16
 
-FROM docker.io/alpine:${ALPINE_VERSION}
+FROM docker.io/tiredofit/alpine:${ALPINE_VERSION}
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ARG NODE_VERSION
@@ -14,7 +14,6 @@ RUN set -x && \
                 gcc \
                 linux-headers \
                 make \
-                python2 \
                 python3 \
                 && \
     \
