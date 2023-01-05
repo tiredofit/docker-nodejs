@@ -296,7 +296,7 @@ jobs:
   v18_alpine:
     env:
       RELEASE: "16"
-      DISTRIB: "3.16"
+      DISTRIB: "3.17"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -392,7 +392,7 @@ jobs:
   v16_alpine:
     env:
       RELEASE: "16"
-      DISTRIB: "3.16"
+      DISTRIB: "3.17"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -488,7 +488,7 @@ jobs:
   v14_alpine:
     env:
       RELEASE: "14"
-      DISTRIB: "3.16"
+      DISTRIB: "3.17"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
